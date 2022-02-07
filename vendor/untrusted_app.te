@@ -76,3 +76,11 @@ allow untrusted_app program_binary_service:service_manager find;
 
 # Purpose : Add permission for mtk radio service find from ServiceManager.
 allow untrusted_app mtk_radio_service:service_manager find;
+
+# Purpose: Netflix Widevine
+allow untrusted_app proc_atf_log:dir search;
+allow untrusted_app proc_m4u:dir search;
+
+get_prop(untrusted_app, tkcore_prop)
+get_prop(untrusted_app, ro_vendor_mtk_trustonic_tee_prop)
+get_prop(untrusted_app, ro_vendor_mtk_microtrust_tee_prop)
